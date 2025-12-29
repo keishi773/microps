@@ -40,6 +40,7 @@ setup(void)
     return 0;
 }
 
+// プロトコルスタックの事前準備のための関数
 static int
 cleanup(void)
 {
@@ -54,9 +55,15 @@ cleanup(void)
 static int
 app_main(void)
 {
+    debugf("press Ctrl+C(SIGINT) to terminate");
+    while (!terminate) {
+        sleep(1);
+    }
+    debugf("terminate");
     return 0;
 }
 
+// テストプログラムのメイン関数
 int
 main(void)
 {
