@@ -52,7 +52,7 @@ net_device_open(struct net_device *dev)
         errorf("already opened, dev=%s", dev->name);
         return -1;
     }
-    // デバイスの起動ルーチンに有効なアドレスが設定されていたら
+    // デバイスの起動ルーチンに有効なアドレスが設定されていたら.
     if (dev->ops->open) {
         // ネットワークデバイスの起動
         if (dev->ops->open(dev) == -1) {
